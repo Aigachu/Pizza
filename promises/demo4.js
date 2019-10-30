@@ -3,6 +3,7 @@
  * @TODO - Demo description.
  */
 
+// Idem.
 let pizzaIsReady = false;
 function checkPizza() {
   if (!pizzaIsReady) {
@@ -12,7 +13,7 @@ function checkPizza() {
   }
 }
 
-// So let's make yet another version of our reassignment function.
+// So let's make yet another version of our cookPizza() function.
 // Notice that we got rid of the callback parameter. That's already a good sign.
 function cookPizza() {
   // So here we're returning a Promise.
@@ -20,13 +21,13 @@ function cookPizza() {
   return new Promise(function (resolve, reject) {
     console.log('Cooking pizza...');
     try  {
-      // Assign a timeout to simulate that it takes 1 full on second to cook the pizza.
       setTimeout(() => {
-        // Set the Pizza to ready after this timeout.
         pizzaIsReady = true;
+        // This 'resolve()' right here is the important part! Remember it!
         resolve();
       }, 1000);
     } catch(e) {
+      // This here is important too!
       reject(e);
     }
   });
@@ -47,7 +48,7 @@ cookPizza().then(function() {
 /**
  * A little cleaner than demo 2 & 3 right? So let's explain what's going on here.
  * A Promise is quite what it seems: a 'promise' to eventually complete an asynchronous operation.
- * Promise.then() is a function you can execute from a Promise to run code that executes AFTER is concludes.
+ * Promise.then() is a function you can execute from a Promise to run code that executes AFTER it concludes.
  * Our checkPizza() function RETURNS a Promise, so we can immediately chain the .then() function after the checkPizza() call.
  *
  * By returning a Promise, the 'cookPizza' function is basically saying: "I Promise to cook the pizza."
@@ -86,11 +87,13 @@ function cookPizza() {
  * Promises are very important in modern JS as they have become quite common. People got real tired of getting stuck
  * in callback hell.
  *
- * If you fully grasp the concept of Promises after this, you can move on to the last demo where we put it all together
- * with the famous async/await keywords.
+ * Now of course, this doesn't TRULY solve our call back hell problem. It just KIND OF makes it more manageable. But you
+ * can still end up in "then()" hell. But the last demo is the culmination of why Promises are gorgeous. This demo was
+ * simply to illustrate how Promises truly work, before getting into the fun stuff!
  *
- * async/await are directly linked to Promises, and once you understand Promises, you'll quickly grasp what these keywords
- * do.
+ * If you fully grasp the concept of Promises in THIS demo, you can move on to the last demo where we put it all together
+ * with the famous async/await keywords. async/await are directly linked to Promises, and once you understand Promises,
+ * you'll quickly grasp what these keywords do.
  *
  * Move on to demo5.js!
  */
