@@ -19,7 +19,9 @@ function checkPizza() {
 function timeout(milliseconds) {
   return new Promise(function(resolve) {
     // Resolve the Promise after the provided amount of milliseconds.
-    setTimeout(resolve, milliseconds) ;
+    setTimeout(function() {
+      resolve();
+    }, milliseconds) ;
   });
 }
 
@@ -42,17 +44,22 @@ async function cookPizza() {
  *
  * This means that the function can be used asynchronously, anywhere, anytime.
  *
- * As for .then() and .catch() that we saw in Demo 4,
+ * As for chaining your function with .then() and .catch() like we saw in Demo 4,
  * .then() will run if no errors occur during the function's execution, and .catch() will run if an error is thrown.
+ * Javascript handles all of this for you as long as you put the async keyword before 'function'.
  *
- * When chaining with .then(), you can use a parameter it in, like '.then(function(returnValue) {})', and it will
- * pass on the return value from your function!
+ * When chaining with .then(), you can use a parameter it in, like '.then(function(VALUE) {})', and VALUE will
+ * be the return value from your function!
  *
  * As for the 'await' keyword, as you can see, we didn't really need to chain anything from the timeout() function.
  *
  * This is because the 'await' keyword essentially eliminates having to chain everything into .then() callbacks. The
  * 'await' keyword makes whatever function following it run asynchronously, and Javascript WILL NOT run the following
  * lines until that function executes. So 'pizzaIsReady = true' will ONLY RUN AFTER 'await timeout(1000)' resolves.
+ *
+ * Using await eliminates the possibility to use .then() since you don't need to anymore. But you can still user
+ * .catch() (i.e. 'await timeout(1000).catch(function(error))'). This means that if you choose to use 'await' instead
+ * of doing a '.then()', you can still '.catch()' to do your error handling!
  *
  * 'await' can only be used with functions that return Promises, and can also only be used in asynchronous functions!
  *
@@ -65,7 +72,10 @@ async function cookPizza() {
 async function process() {
   // Check the pizza.
   checkPizza();
+  // Translates to: Wait for the execution of cookPizza() to complete.
   await cookPizza();
+  // Check the pizza.
+  // Due to the 'await' in the previous line, the following line only runs when the previous line is complete.
   checkPizza();
 }
 
