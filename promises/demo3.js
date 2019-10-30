@@ -49,7 +49,7 @@ function slicePizza(callback) {
   setTimeout(() => {
     console.log('CALL ME THE PIZZA NINJA BABY.');
     callback();
-  }, 3000);
+  }, 2000);
 }
 
 // Function to serve the pizza.
