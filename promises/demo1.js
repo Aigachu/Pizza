@@ -40,7 +40,7 @@ cookPizza();
 checkPizza();
 
 /**
- * If you run this script, you'll see that Javascript didn't care that reassign() wasn't done executing. It went ahead
+ * If you run this script, you'll see that Javascript didn't care that cookPizza() wasn't done executing. It went ahead
  * and ran the second checkPizza() call before the timeout was finished.
  *
  * Essentially, Javascript checked the pizza while it was still being cooked. Come on Javascript!!
