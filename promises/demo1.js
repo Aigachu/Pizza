@@ -1,6 +1,8 @@
 /**
  * DEMO 1: CHECKING THE PIZZA WHILE COOKING IT
- * @TODO - Demo description.
+ *
+ * Demonstration of the synchronous nature of Javascript and potential caveats that you can encounter during
+ * development.
  */
 
 // Let's assign a variable to track whether our pizza is ready or not.
@@ -43,10 +45,11 @@ checkPizza();
  * If you run this script, you'll see that Javascript didn't care that cookPizza() wasn't done executing. It went ahead
  * and ran the second checkPizza() call before the timeout was finished.
  *
- * Essentially, Javascript checked the pizza while it was still being cooked. Come on Javascript!!
+ * Essentially, Javascript checked the pizza while it was still being cooked.
  *
  * This is because Javascript is Synchronous by nature.
- * It will not run code asynchronously, line by line, waiting for previous lines to finish. It will execute them at the same time.
+ * It will not run code asynchronously, line by line, waiting for previous lines to finish. It will execute them at
+ * the same time.
  *
  * Many times you'll want to get around this. We'll explore the ways you can, starting with the oldest method.
  *

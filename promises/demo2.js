@@ -1,6 +1,7 @@
 /**
  * PROMISES DEMO 2: CHECK THE PIZZA AFTER COOKING IT
- * @TODO - Demo description.
+ *
+ * Demonstration of the use of callback functions to accomplish asynchronous tasks.
  */
 
 // Let's bring these back again. No changes here.
@@ -39,13 +40,14 @@ cookPizza(function () {
 /**
  * So now we actually get the intended result!
  *
- * But...Things can actually get pretty dirty, pretty fast with this method.
+ * But...Things can actually get pretty DIRTY, pretty FAST, with this method.
  *
  * Say you want to serve the pizza after it's cooked...Then you'd have to let it cool off for a bit, right?
  *
  * And then slice it...OF COURSE you gotta slice it!
  *
- * And then you gotta add extra toppings for certain people, right? Like crazy people that put ketchup and mustard on their slices...
+ * And then you gotta add extra toppings for certain people, right?
+ * Like crazy people that put ketchup and mustard on their slices...
  *
  * Basically, what I'm getting at is, all of these tasks take time and depend on each other, which means they all have
  * to run asynchronously. You would have to have callbacks in literally all of those functions that you want to run in

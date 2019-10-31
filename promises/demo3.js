@@ -1,6 +1,7 @@
 /**
  * PROMISES DEMO 3: PIZZA CALLBACK HELL
- * @TODO - Demo description.
+ *
+ * Demonstration of CALLBACK HELL! Spooky!
  */
 
 // Again, no changes here.

@@ -1,6 +1,7 @@
 /**
  * PROMISES DEMO 5: AWAIT THE PIZZA!
- * @TODO - Demo description.
+ *
+ * Demonstration of the usages of async/await & Promises.
  */
 
 // One more time baby!
@@ -57,7 +58,7 @@ async function cookPizza() {
  * 'await' keyword makes whatever function following it run asynchronously, and Javascript WILL NOT run the following
  * lines until that function executes. So 'pizzaIsReady = true' will ONLY RUN AFTER 'await timeout(1000)' resolves.
  *
- * Using await eliminates the possibility to use .then() since you don't need to anymore. But you can still user
+ * Using await eliminates the possibility to use .then() since you don't need to anymore. But you can still use
  * .catch() (i.e. 'await timeout(1000).catch(function(error))'). This means that if you choose to use 'await' instead
  * of doing a '.then()', you can still '.catch()' to do your error handling!
  *
@@ -90,5 +91,7 @@ process();
  * Javascript's synchronous nature, but it's always good to have the choice and control over it!
  *
  * Using await/async makes your code much cleaner to understand, allows for fully asynchronous execution AND avoids any
- * sort of callback hell or endless nesting of function. It's really neat, so get used to using them!
+ * sort of callback hell or endless nesting of functions. It's really neat, so get used to using them!
+ *
+ * Now...I think I'm actually going to order myself a pizza...LOL!
  */

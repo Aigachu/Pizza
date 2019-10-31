@@ -1,6 +1,7 @@
 /**
  * PROMISES DEMO 4: I PROMISE TO COOK THE PIZZA!!
- * @TODO - Demo description.
+ *
+ * Demonstration of Promises and how they work.
  */
 
 // Idem.
@@ -72,7 +73,7 @@ function cookPizza() {
         resolve();
       }, 1000);
     } catch(e) {
-      // If an error happen, we reject with the error.
+      // If an error happens, we reject with the error.
       // So essentially what this line means is: Go to '.catch()' and run whatever is in there.
       // Let's be clear though, there's no real way this code can throw an error.
       reject(e);
@@ -87,9 +88,11 @@ function cookPizza() {
  * Promises are very important in modern JS as they have become quite common. People got real tired of getting stuck
  * in callback hell.
  *
- * Now of course, this doesn't TRULY solve our call back hell problem. It just KIND OF makes it more manageable. But you
- * can still end up in "then()" hell. But the last demo is the culmination of why Promises are gorgeous. This demo was
- * simply to illustrate how Promises truly work, before getting into the fun stuff!
+ * Now of course, this doesn't TRULY solve our callback hell problem. It just KIND OF makes it more manageable. But you
+ * can technically still end up in "then()" hell.
+ *
+ * The last demo will show you how to completely avoid this, and is the culmination of why Promises are gorgeous. This
+ * demo was simply to illustrate how Promises truly work, before getting into the fun stuff!
  *
  * If you fully grasp the concept of Promises in THIS demo, you can move on to the last demo where we put it all together
  * with the famous async/await keywords. async/await are directly linked to Promises, and once you understand Promises,
