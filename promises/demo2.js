@@ -14,7 +14,7 @@ function checkPizza() {
   }
 }
 
-// Let's modify our checkPizza() function and add a fourth parameter called 'callback'.
+// Let's modify our checkPizza() function and add a parameter called 'callback'.
 // This parameter expects a function that will run after the pizza is cooked, as coded below.
 function cookPizza(callback) {
   console.log('Cooking pizza...');
