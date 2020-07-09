@@ -50,7 +50,7 @@ cookPizza().then(function() {
  * A little cleaner than demo 2 & 3 right? So let's explain what's going on here.
  * A Promise is quite what it seems: a 'promise' to eventually complete an asynchronous operation.
  * Promise.then() is a function you can execute from a Promise to run code that executes AFTER it concludes.
- * Our checkPizza() function RETURNS a Promise, so we can immediately chain the .then() function after the checkPizza() call.
+ * Our cookPizza() function RETURNS a Promise, so we can immediately chain the .then() function after the cookPizza() call.
  *
  * By returning a Promise, the 'cookPizza' function is basically saying: "I Promise to cook the pizza."
  * It essentially does what we did with the callback method, but much more cleanly and easier to read.
