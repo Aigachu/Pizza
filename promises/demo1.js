@@ -47,8 +47,8 @@ checkPizza();
  *
  * Essentially, Javascript checked the pizza while it was still being cooked.
  *
- * This is because Javascript is Synchronous by nature.
- * It will not run code asynchronously, line by line, waiting for previous lines to finish. It will execute them at
+ * This is because Javascript is asynchronous by nature.
+ * It will not run code synchronously, line by line, waiting for previous lines to finish. It will execute them at
  * the same time.
  *
  * Many times you'll want to get around this. We'll explore the ways you can, starting with the oldest method.

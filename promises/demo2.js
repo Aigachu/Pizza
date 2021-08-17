@@ -1,7 +1,7 @@
 /**
  * PROMISES DEMO 2: CHECK THE PIZZA AFTER COOKING IT
  *
- * Demonstration of the use of callback functions to accomplish asynchronous tasks.
+ * Demonstration of the use of callback functions to accomplish synchronous tasks.
  */
 
 // Let's bring these back again. No changes here.
@@ -33,7 +33,7 @@ checkPizza();
 // Now, we run our new function.
 // For the callback parameter, we add a newly created function.
 // As coded above, this callback function will run after the timeout we put in the cookPizza() function.
-cookPizza(function () {
+cookPizza(() => {
   checkPizza();
 });
 
@@ -50,7 +50,7 @@ cookPizza(function () {
  * Like crazy people that put ketchup and mustard on their slices...
  *
  * Basically, what I'm getting at is, all of these tasks take time and depend on each other, which means they all have
- * to run asynchronously. You would have to have callbacks in literally all of those functions that you want to run in
+ * to run synchronously. You would have to have callbacks in literally all of those functions that you want to run in
  * succession.
  *
  * And think about it...You'd have to nest each function within each other to properly make sure that everything runs in

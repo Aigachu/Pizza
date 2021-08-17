@@ -67,12 +67,12 @@ function servePizza(callback) {
 checkPizza();
 
 // Now let's do all of this asynchronously with all of our beautiful callbacks.
-cookPizza(function () {
+cookPizza( () => {
   checkPizza();
-  letPizzaCool(function () {
-    addToppingsToPizza(function () {
-      slicePizza(function () {
-        servePizza(function () {
+  letPizzaCool( () => {
+    addToppingsToPizza(() => {
+      slicePizza(() => {
+        servePizza(() => {
           console.log("Okay. Let's eat!");
           console.log("Got a table right here in the middle of callback hell!");
         })
@@ -82,7 +82,7 @@ cookPizza(function () {
 });
 
 /**
- * Now isn't that just beautiful? Everything ran asynchronously!
+ * Now isn't that just beautiful? Everything ran synchronously!
  *
  * BUT...Look at that code. It's ridiculous! We can't possibly use this as a solution since in actual big projects,
  * it'll be insane. These functions are very simple, but in real world scenarios, you're going to have much more to do

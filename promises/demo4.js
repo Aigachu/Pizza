@@ -40,15 +40,15 @@ function cookPizza() {
 checkPizza();
 
 // Now, let's use our fancy new function that returns a promise.
-cookPizza().then(function() {
+cookPizza().then(() => {
   checkPizza();
-}).catch(function (error) {
+}).catch((error) => {
   console.log(error);
 });
 
 /**
  * A little cleaner than demo 2 & 3 right? So let's explain what's going on here.
- * A Promise is quite what it seems: a 'promise' to eventually complete an asynchronous operation.
+ * A Promise is pretty much what it seems like: a 'promise' to eventually complete an operation.
  * Promise.then() is a function you can execute from a Promise to run code that executes AFTER it concludes.
  * Our cookPizza() function RETURNS a Promise, so we can immediately chain the .then() function after the cookPizza() call.
  *
@@ -60,7 +60,7 @@ function cookPizza() {
   // As mentioned above, we return a promise straight up! So everything that runs in this function is within a promise.
   // A Promise is initialized with a function itself that has 2 parameters: resolve & reject.
   // -- 'resolve' is the callback that executes after the Promise properly completes. It will lead to the '.then()' call.
-  // -- 'reject' is the callback that executes if the Promise properly fails. It will lead to the '.catch()' chain.
+  // -- 'reject' is the callback that executes if the Promise properly shits itself. It will lead to the '.catch()' call.
   // Quite similar to our callback solution from demo 2 actually if you think about it! But much more organized.
   return new Promise(function (resolve, reject) {
     console.log('Cooking pizza...');
@@ -75,7 +75,7 @@ function cookPizza() {
     } catch(e) {
       // If an error happens, we reject with the error.
       // So essentially what this line means is: Go to '.catch()' and run whatever is in there.
-      // Let's be clear though, there's no real way this code can throw an error.
+      // Let's be clear though, there's no real way this code can throw an error. You can alter it to test though!
       reject(e);
     }
   });

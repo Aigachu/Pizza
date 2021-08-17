@@ -16,13 +16,14 @@ function checkPizza() {
 
 // With our new knowledge on Promises, we're going to create a separate function that simply handles timing out for a set amount of time.
 // All this function does is return a Promise that resolves after the provided amount of milliseconds.
+// So basically, it's a promise to 'wait' for a set amount of milliseconds!
 // We'll use it to easily demonstrate async/await behavior.
-function timeout(milliseconds) {
+function wait(milliseconds) {
   return new Promise(function(resolve) {
     // Resolve the Promise after the provided amount of milliseconds.
     setTimeout(function() {
       resolve();
-    }, milliseconds) ;
+    }, milliseconds);
   });
 }
 
@@ -30,7 +31,7 @@ function timeout(milliseconds) {
 // Let's make use of the async/await keywords!
 async function cookPizza() {
   console.log('Cooking pizza...');
-  await timeout(1000);
+  await wait(1000);
   pizzaIsReady = true;
 }
 
@@ -52,11 +53,11 @@ async function cookPizza() {
  * When chaining with .then(), you can use a parameter it in, like '.then(function(VALUE) {})', and VALUE will
  * be the return value from your function!
  *
- * As for the 'await' keyword, as you can see, we didn't really need to chain anything from the timeout() function.
+ * As for the 'await' keyword, as you can see, we didn't really need to chain anything from the wait() function.
  *
  * This is because the 'await' keyword essentially eliminates having to chain everything into .then() callbacks. The
- * 'await' keyword makes whatever function following it run asynchronously, and Javascript WILL NOT run the following
- * lines until that function executes. So 'pizzaIsReady = true' will ONLY RUN AFTER 'await timeout(1000)' resolves.
+ * 'await' keyword makes whatever function following it run synchronously, and Javascript WILL NOT run the following
+ * lines until that function executes. So 'pizzaIsReady = true' will ONLY RUN AFTER 'await wait(1000)' resolves.
  *
  * Using await eliminates the possibility to use .then() since you don't need to anymore. But you can still use
  * .catch() (i.e. 'await timeout(1000).catch(function(error))'). This means that if you choose to use 'await' instead
@@ -70,7 +71,7 @@ async function cookPizza() {
 // Look at how simple this.
 // We wrap all execution in a process() function that is asynchronous.
 // This allows us to use await.
-async function process() {
+async function makingLunch() {
   // Check the pizza.
   checkPizza();
   // Translates to: Wait for the execution of cookPizza() to complete.
@@ -80,17 +81,17 @@ async function process() {
   checkPizza();
 }
 
-// Now run it!
-process();
+// Now run it all!
+await makingLunch();
 
 /**
  * Quite different from demo 2 & 4 right? But it accomplishes the same goal!
  *
  * It's generally good practice to make functions asynchronous if you're developing apps in Javascript, as you can
  * properly make sure that things execute in order. Of course, there are times where you want to take advantage of
- * Javascript's synchronous nature, but it's always good to have the choice and control over it!
+ * Javascript's asynchronous nature, but it's always good to have the choice and control over it!
  *
- * Using await/async makes your code much cleaner to understand, allows for fully asynchronous execution AND avoids any
+ * Using await/async makes your code much cleaner to understand, allows for fully synchronous execution AND avoids any
  * sort of callback hell or endless nesting of functions. It's really neat, so get used to using them!
  *
  * Now...I think I'm actually going to order myself a pizza...LOL!
