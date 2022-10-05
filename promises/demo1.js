@@ -8,6 +8,8 @@
 // Let's assign a variable to track whether our pizza is ready or not.
 let pizzaIsReady = false;
 
+let demo = true;
+
 // This simple function will tell us if the pizza is ready.
 function checkPizza() {
   if (!pizzaIsReady) {
