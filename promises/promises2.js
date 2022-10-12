@@ -58,5 +58,5 @@ cookPizza(() => {
  *
  * Wanna simulate this?
  *
- * Take a look at the horror that is demo3.js!
+ * Take a look at the horror that is promises3.js!
  */

@@ -98,5 +98,5 @@ function cookPizza() {
  * with the famous async/await keywords. async/await are directly linked to Promises, and once you understand Promises,
  * you'll quickly grasp what these keywords do.
  *
- * Move on to demo5.js!
+ * Move on to promises5.js!
  */

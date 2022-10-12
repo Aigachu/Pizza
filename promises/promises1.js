@@ -1,5 +1,5 @@
 /**
- * DEMO 1: CHECKING THE PIZZA WHILE COOKING IT
+ * PROMISES DEMO 1: CHECKING THE PIZZA WHILE COOKING IT
  *
  * Demonstration of the synchronous nature of Javascript and potential caveats that you can encounter during
  * development.
@@ -55,6 +55,6 @@ checkPizza();
  *
  * Many times you'll want to get around this. We'll explore the ways you can, starting with the oldest method.
  *
- * Move on to demo2.js!
+ * Move on to promises2.js!
  */
 

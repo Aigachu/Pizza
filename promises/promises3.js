@@ -90,5 +90,5 @@ cookPizza( () => {
  *
  * So what's the better solution? PROMISES!
  *
- * Move on to demo4.js!
+ * Move on to promises4.js!
  */
