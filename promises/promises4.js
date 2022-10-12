@@ -58,9 +58,9 @@ cookPizza().then(() => {
  */
 function cookPizza() {
   // As mentioned above, we return a promise straight up! So everything that runs in this function is within a promise.
-  // A Promise is initialized with a function itself that has 2 parameters: resolve & reject.
-  // -- 'resolve' is the callback that executes after the Promise properly completes. It will lead to the '.then()' call.
-  // -- 'reject' is the callback that executes if the Promise properly shits itself. It will lead to the '.catch()' call.
+  // A Promise is initialized with a function that has 2 parameters: resolve & reject.
+  // -- 'resolve' is the function that executes after the Promise properly completes. It will lead to the '.then()' call.
+  // -- 'reject' is the function that executes if the Promise properly shits itself. It will lead to the '.catch()' call.
   // Quite similar to our callback solution from demo 2 actually if you think about it! But much more organized.
   return new Promise(function (resolve, reject) {
     console.log('Cooking pizza...');
@@ -75,7 +75,8 @@ function cookPizza() {
     } catch(e) {
       // If an error happens, we reject with the error.
       // So essentially what this line means is: Go to '.catch()' and run whatever is in there.
-      // Let's be clear though, there's no real way this code can throw an error. You can alter it to test though!
+      // Let's be clear though, there's no real way this demo code can throw an error and reach this.
+      //  Feel free to alter it to test though!
       reject(e);
     }
   });
@@ -91,7 +92,7 @@ function cookPizza() {
  * Now of course, this doesn't TRULY solve our callback hell problem. It just KIND OF makes it more manageable. But you
  * can technically still end up in "then()" hell.
  *
- * The last demo will show you how to completely avoid this, and is the culmination of why Promises are gorgeous. This
+ * The last demo will show you how to completely avoid this, and is the culmination of why Promises are awesome. This
  * demo was simply to illustrate how Promises truly work, before getting into the fun stuff!
  *
  * If you fully grasp the concept of Promises in THIS demo, you can move on to the last demo where we put it all together

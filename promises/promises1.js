@@ -8,8 +8,6 @@
 // Let's assign a variable to track whether our pizza is ready or not.
 let pizzaIsReady = false;
 
-let demo = true;
-
 // This simple function will tell us if the pizza is ready.
 function checkPizza() {
   if (!pizzaIsReady) {
@@ -23,7 +21,7 @@ function checkPizza() {
  * This simple function will cook the pizza.
  * The pizza takes a full on second to cook. I know, CRAZY!
  * In all seriousness though, slow functions are not uncommon.
- * Sometimes you're querying an API or a Database, and those processes can take awhile to complete.
+ * Sometimes you're querying an API or a Database, and those processes can take a few seconds to complete.
  */
 function cookPizza() {
   console.log('Cooking pizza...');
@@ -49,9 +47,9 @@ checkPizza();
  *
  * Essentially, Javascript checked the pizza while it was still being cooked.
  *
- * This is because Javascript is asynchronous by nature.
- * It will not run code synchronously, line by line, waiting for previous lines to finish. It will execute them at
- * the same time.
+ * Javascript is synchronous by nature. It will run the functions 1 by 1 sequentially, but when it comes to functions
+ * that take time to actually complete actions, it will not wait. In the case above, Javascript did not wait for
+ * cookPizza() to finish. We may end up in cases where we assume it would wait, but it doesn't.
  *
  * Many times you'll want to get around this. We'll explore the ways you can, starting with the oldest method.
  *

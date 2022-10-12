@@ -42,7 +42,7 @@ async function cookPizza() {
  *
  * First off, this keyword tells Javascript that this function returns a Promise, and wraps whatever you return from
  * your function into a Promise. So no matter what your function returns, heck even if it doesn't return ANYTHING,
- * it'll return a Promise (For functions that return nothing, it will return void wrapped in a Promise).
+ * it'll return a Promise (For functions that return nothing, it will return 'void' wrapped in a Promise).
  *
  * This means that the function can be used asynchronously, anywhere, anytime.
  *
@@ -56,8 +56,8 @@ async function cookPizza() {
  * As for the 'await' keyword, as you can see, we didn't really need to chain anything from the wait() function.
  *
  * This is because the 'await' keyword essentially eliminates having to chain everything into .then() callbacks. The
- * 'await' keyword makes whatever function following it run synchronously, and Javascript WILL NOT run the following
- * lines until that function executes. So 'pizzaIsReady = true' will ONLY RUN AFTER 'await wait(1000)' resolves.
+ * 'await' keyword makes javascript *wait* for it to complete before running any code after it. Javascript WILL NOT run the following
+ * lines until that function is done executing. So 'pizzaIsReady = true' will ONLY run AFTER 'await wait(1000)' resolves.
  *
  * Using await eliminates the possibility to use .then() since you don't need to anymore. But you can still use
  * .catch() (i.e. 'await timeout(1000).catch(function(error))'). This means that if you choose to use 'await' instead
@@ -68,8 +68,8 @@ async function cookPizza() {
  * So, ready to see all of this in action?
  */
 
-// Look at how simple this.
-// We wrap all execution in a process() function that is asynchronous.
+// Look at how simple this is.
+// We wrap all execution in a makingLunch() function that is asynchronous.
 // This allows us to use await.
 async function makingLunch() {
   // Check the pizza.
@@ -89,7 +89,7 @@ await makingLunch();
  *
  * It's generally good practice to make functions asynchronous if you're developing apps in Javascript, as you can
  * properly make sure that things execute in order. Of course, there are times where you want to take advantage of
- * Javascript's asynchronous nature, but it's always good to have the choice and control over it!
+ * Javascript's synchronous nature, but it's always good to have the choice and control over it!
  *
  * Using await/async makes your code much cleaner to understand, allows for fully synchronous execution AND avoids any
  * sort of callback hell or endless nesting of functions. It's really neat, so get used to using them!

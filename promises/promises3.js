@@ -84,7 +84,7 @@ cookPizza( () => {
 /**
  * Now isn't that just beautiful? Everything ran synchronously!
  *
- * BUT...Look at that code. It's ridiculous! We can't possibly use this as a solution since in actual big projects,
+ * BUT...Look at that code. It's disgusting. We can't possibly use this as a solution since in actual big projects,
  * it'll be insane. These functions are very simple, but in real world scenarios, you're going to have much more to do
  * in your functions than just a console.log.
  *

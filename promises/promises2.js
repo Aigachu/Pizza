@@ -1,7 +1,7 @@
 /**
  * PROMISES DEMO 2: CHECK THE PIZZA AFTER COOKING IT
  *
- * Demonstration of the use of callback functions to accomplish synchronous tasks.
+ * Demonstration of the use of callback functions to successfully wait for tasks to complete.
  */
 
 // Let's bring these back again. No changes here.
@@ -50,8 +50,8 @@ cookPizza(() => {
  * Like crazy people that put ketchup and mustard on their slices...
  *
  * Basically, what I'm getting at is, all of these tasks take time and depend on each other, which means they all have
- * to run synchronously. You would have to have callbacks in literally all of those functions that you want to run in
- * succession.
+ * to run one after the other. You would have to have callbacks in literally all of those functions that you want to run
+ * in succession.
  *
  * And think about it...You'd have to nest each function within each other to properly make sure that everything runs in
  * order.
